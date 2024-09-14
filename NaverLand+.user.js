@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NaverLand+
 // @namespace    http://tampermonkey.net/
-// @version      v0.1.1
+// @version      v0.1.2
 // @description  try to take over the world!
 // @author       Graval504
 // @match        https://new.land.naver.com/rooms*

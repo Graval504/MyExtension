@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-14
+// @version      2024-09-14v2
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
