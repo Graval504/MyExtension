@@ -16,4 +16,4 @@
 스크롤을 내리면 새로운 매물이 나타나고, 각 기능은 반복되지 않으므로 어느정도 매물이 추가될 때마다 주기적으로 누르는 것을 추천합니다.
 
 ## License
-기본적으로 모든 스크립트는 [DBAD 라이센스]("https://github.com/philsturgeon/dbad/blob/master/LICENSE.md")를 따릅니다.
+기본적으로 모든 스크립트는 [DBAD 라이센스]("https://github.com/philsturgeon/dbad?tab=License-1-ov-file")를 따릅니다.
