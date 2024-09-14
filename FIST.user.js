@@ -6,6 +6,7 @@
 // @author       Graval504
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
+// @updateURL    https://github.com/Graval504/MyExtension/raw/refs/heads/main/FIST.user.js
 // @grant        none
 // @license      DBAD
 // ==/UserScript==

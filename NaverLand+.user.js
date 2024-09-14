@@ -6,6 +6,7 @@
 // @author       Graval504
 // @match        https://new.land.naver.com/rooms*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=naver.com
+// @updateURL    https://github.com/Graval504/MyExtension/raw/refs/heads/main/NaverLand+.user.js
 // @grant        none
 // @license      DBAD
 // ==/UserScript==
