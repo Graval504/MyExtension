@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-15
+// @version      2024-09-15v2
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
@@ -66,7 +66,6 @@ Known Issues:
                         filteredList.style.display = 'none';
                     }
                 });
-                filteredList.addEventListener('mouseup',() => {filteredList.style.display = 'none'});
                 container_contents.prepend(showFiltered);
                 document.body.prepend(filteredList);
                 document.addEventListener('click', (event) => {if (!(filteredList.contains(event.target) || (showFiltered.contains(event.target)))) filteredList.style.display = 'none'});
