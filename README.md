@@ -1,7 +1,7 @@
 # MyExtension
- 개인적으로 사용하는 탬퍼몽키용 스크립트입니다.
-* <a href="#fist" style="color: white;">FIST</a>
-* <a href="#naverland" style="color: white;">NaverLand+</a>
+ 개인적으로 사용하는 [TamperMonkey](https://www.tampermonkey.net)용 스크립트입니다.
+* <a href="#fist">FIST</a>
+* <a href="#naverland">NaverLand+</a>
 
 
 ## FIST 
@@ -16,4 +16,4 @@
 스크롤을 내리면 새로운 매물이 나타나고, 각 기능은 반복되지 않으므로 어느정도 매물이 추가될 때마다 주기적으로 누르는 것을 추천합니다.
 
 ## License
-기본적으로 모든 스크립트는 <a href="https://github.com/philsturgeon/dbad/blob/master/LICENSE.md" style="color: white;">DBAD 라이센스</a>를 따릅니다.
+기본적으로 모든 스크립트는 [DBAD 라이센스](https://github.com/philsturgeon/dbad/blob/master/LICENSE.md)를 따릅니다.
