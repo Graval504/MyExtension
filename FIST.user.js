@@ -27,6 +27,15 @@ Known Issues:
     var showFiltered = document.createElement("button");
     var filteredList = document.createElement("ul");
 
+    if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {
+        window.trustedTypes.createPolicy('default', {
+        createHTML: string => string
+        // Optional, only needed for script (url) tags
+        //,createScriptURL: string => string
+            //,createScript: string => string,
+        });
+    }
+    
     if (document.getElementById("cu-css") === null) {
       const styles = `#FilteredComments-list > li:not(:first-child)::before {
       position: absolute;
