@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-15v2
+// @version      2024-09-15
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
@@ -75,7 +75,8 @@ Known Issues:
 
     function addCommentToList(comment) {
         const li = document.createElement('li');
-        li.style.marginBottom = '8px'
+        li.style.marginBottom = '8px';
+        li.style.position = 'relative';
         li.prepend(comment);
         filteredList.appendChild(li);
     }
@@ -149,6 +150,34 @@ Known Issues:
         });
     }
     createButton();
+
+    if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {
+        window.trustedTypes.createPolicy('default', {
+            createHTML: string => string
+            // Optional, only needed for script (url) tags
+            //,createScriptURL: string => string
+            //,createScript: string => string,
+        });
+    }
+    const cuStyle = `#FilteredComments-list > li:not(:first-child)::before {
+    position: absolute;
+    content: "";
+    top: -4px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    position: absolute;
+}`
+    if (document.getElementById("cu-css") === null) {
+      const styles = cuStyle;
+
+      var styleSheet = document.createElement("style");
+      styleSheet.id = "cu-css";
+      styleSheet.type = 'text/css';
+      styleSheet.innerHTML = styles;
+      document.head.appendChild(styleSheet);
+    }
 
     //script start
     console.log("[FIST]: loading FIST..")
