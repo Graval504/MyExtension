@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-15v4
+// @version      2024-09-15v5
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
@@ -127,6 +127,14 @@ Known Issues:
                 }
 
                 if (commentLine.textContent.includes('\r\n')) {
+                    if (comment.children.comment.authorChannelName.match(/[1lI|]9/)) {
+                        console.log("[FIST]: removed spam comment - " + commentText.textContent);
+                        filteredComments += 1;
+                        showFiltered.innerText = filteredComments + ' 💀';
+                        addCommentToList(commentText);
+                        comment.remove();
+                        return;
+                    }
                     /* //good for eliminating spam but erase too much normal comments, which has multple lines.
                     if (commentLine.textContent.split('\r\n')[1].trim() != '') {
                         console.log("[FIST]: removed spam comment - " + commentText.textContent);
