@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-14v2
+// @version      2024-09-15
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
@@ -41,12 +41,14 @@ Known Issues:
                 filteredList.id = "FilteredComments-list";
                 Object.assign(filteredList.style, {
                     position: 'fixed',
+                    overflowY: 'scroll',
                     top: '50px',
                     left: '95%',
                     transform: 'translate(-100%, 0%)',
                     backgroundColor: 'rgba(252, 252, 252, 1)',
                     color: '#020202',
                     width: '250px',
+                    maxHeight: '350px',
                     padding: '8px',
                     borderRadius: '6px',
                     fontSize: '12px',
@@ -64,16 +66,18 @@ Known Issues:
                         filteredList.style.display = 'none';
                     }
                 });
+                filteredList.addEventListener('mouseup',() => {filteredList.style.display = 'none'});
                 container_contents.prepend(showFiltered);
                 document.body.prepend(filteredList);
+                document.addEventListener('click', (event) => {if (!(filteredList.contains(event.target) || (showFiltered.contains(event.target)))) filteredList.style.display = 'none'});
             }
         }
     }
 
-    function addCommentToList(text) {
+    function addCommentToList(comment) {
         const li = document.createElement('li');
         li.style.marginBottom = '8px'
-        li.textContent = text;
+        li.prepend(comment);
         filteredList.appendChild(li);
     }
 
@@ -91,7 +95,7 @@ Known Issues:
                         console.log("[FIST]: removed spam comment - " + commentText.textContent);
                         filteredComments += 1;
                         showFiltered.innerText = filteredComments + ' 💀';
-                        addCommentToList(commentText.textContent);
+                        addCommentToList(commentText);
                         comment.remove();
                         return;
                     }
@@ -103,7 +107,7 @@ Known Issues:
                         console.log("[FIST]: removed spam comment - " + commentText.textContent);
                         filteredComments += 1;
                         showFiltered.innerText = filteredComments + ' 💀';
-                        addCommentToList(commentText.textContent);
+                        addCommentToList(commentText);
                         comment.remove();
                         return;
                     }
@@ -125,7 +129,7 @@ Known Issues:
                             console.log("[FIST]: removed spam reply - " + replyText.textContent);
                             filteredComments += 1;
                             showFiltered.innerText = filteredComments + ' 💀';
-                            addCommentToList(replyText.textContent);
+                            addCommentToList(replyText);
                             reply.remove();
                             return;
                         }
@@ -135,7 +139,7 @@ Known Issues:
                             console.log("[FIST]: removed spam reply - " + replyText.textContent);
                             filteredComments += 1;
                             showFiltered.innerText = filteredComments + ' 💀';
-                            addCommentToList(replyText.textContent);
+                            addCommentToList(replyText);
                             reply.remove();
                             return;
                         }
