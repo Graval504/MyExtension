@@ -23,7 +23,6 @@ Known Issues:
 (function() {
     'use strict';
 
-    let toastTimeout;
     var filteredComments = 0
     var showFiltered = document.createElement("button");
     var filteredList = document.createElement("ul");
@@ -42,7 +41,6 @@ Known Issues:
 
       var styleSheet = document.createElement("style");
       styleSheet.id = "cu-css";
-      styleSheet.type = 'text/css';
       styleSheet.innerHTML = styles;
       document.head.appendChild(styleSheet);
     }
@@ -169,14 +167,6 @@ Known Issues:
     }
 
     createButton();
-        if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {
-        window.trustedTypes.createPolicy('default', {
-            createHTML: string => string
-            // Optional, only needed for script (url) tags
-            //,createScriptURL: string => string
-            //,createScript: string => string,
-        });
-    }
 
     //script start
     console.log("[FIST]: loading FIST..")
