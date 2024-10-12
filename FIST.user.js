@@ -126,15 +126,14 @@ Known Issues:
                     }
                 }
 
-                if (commentLine.textContent.includes('\r\n')) {
-                    if (comment.children.comment.authorChannelName.match(/[1lI|]9/)) {
-                        console.log("[FIST]: removed spam comment - " + commentText.textContent);
-                        filteredComments += 1;
-                        showFiltered.innerText = filteredComments + ' 💀';
-                        addCommentToList(commentText);
-                        comment.remove();
-                        return;
-                    }
+                if (comment.children.comment.authorChannelName.match(/[1lI|]9금/)) {
+                    console.log("[FIST]: removed spam comment - " + commentText.textContent);
+                    filteredComments += 1;
+                    showFiltered.innerText = filteredComments + ' 💀';
+                    addCommentToList(commentText);
+                    comment.remove();
+                    return;
+                    
                     /* //good for eliminating spam but erase too much normal comments, which has multple lines.
                     if (commentLine.textContent.split('\r\n')[1].trim() != '') {
                         console.log("[FIST]: removed spam comment - " + commentText.textContent);
