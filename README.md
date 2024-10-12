@@ -2,7 +2,7 @@
  개인적으로 사용하는 [TamperMonkey](https://www.tampermonkey.net)용 스크립트입니다.
 * <a href="#fist">FIST</a>
 * <a href="#naverland">NaverLand+</a>
-
+* <a href="#arcagallery">ArcaGallery</a>
 
 ## FIST 
 유튜브의 불법사이트 광고 댓글을 제거하는 스크립트입니다.\
@@ -17,7 +17,7 @@
 
 ## ArcaGallery
 아카라이브의 게시글 목록을 보다 편리하게 보기 위한 스크립트입니다.\
-이미지가 첨부되어있는 게시글의 미리보기 이미지를 게시글의 제목 앞에 표시하여 보여줍니다.\
+이미지가 첨부되어있는 게시글의 미리보기 이미지를 게시글의 제목 앞에 표시하여 보여줍니다.
 
 ## License
 기본적으로 모든 스크립트는 [DBAD 라이센스](https://github.com/philsturgeon/dbad/blob/master/LICENSE.md)를 따릅니다.
