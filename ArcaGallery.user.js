@@ -22,6 +22,7 @@
             var hasImage = article.querySelector(".vrow-preview")
             if (hasImage) {
                 var img = article.querySelector(".vrow-preview > img")
+                if (!img) return
                 article.style.height = "112px"
                 article.querySelector(".col-title").prepend(img)
                 hasImage.remove()
