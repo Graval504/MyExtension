@@ -40,7 +40,7 @@ Known Issues:
       const styles = `#FilteredComments-list > li:not(:first-child)::before {
       position: absolute;
       content: "";
-      top: -0.15em;
+      top: -0.4em;
       width: 92%;
       height: 0.05em;
       background-color: #101010;
@@ -100,7 +100,7 @@ Known Issues:
 
     function addCommentToList(comment) {
         const li = document.createElement('li');
-        li.style.marginBottom = '8px'
+        li.style.marginBottom = '0.75em'
         li.style.position = 'relative';
         li.prepend(comment);
         filteredList.appendChild(li);
