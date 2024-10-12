@@ -31,7 +31,7 @@
     }
 
     //script start
-    console.log("[FIST]: loading FIST..")
+    console.log("[ArcaGallery]: loading FIST..")
     setInterval(showTitleImage,1000)
-    console.log("[FIST]: Active.")
+    console.log("[ArcaGallery]: Active.")
 })();
