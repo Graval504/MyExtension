@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FIST
 // @namespace    http://tampermonkey.net/
-// @version      2024-09-15v5
+// @version      2025-06-17
 // @description  Fucking Illegal Spam Terminator
 // @author       Graval504
 // @match        https://www.youtube.com/*
@@ -113,38 +113,16 @@ Known Issues:
             var commentText = comment.children.comment.querySelector('#content-text > span')
             var sus = false;
             for (var commentLine of commentText.childNodes) {
-                if (sus) {
-                    sus = false
-                    // check there is emoji or timestamp
-                    if (!(commentLine.querySelector(".yt-core-image") || commentLine.querySelector(".yt-core-attributed-string__link"))) {
-                        console.log("[FIST]: removed spam comment - " + commentText.textContent);
-                        filteredComments += 1;
-                        showFiltered.innerText = filteredComments + ' 💀';
-                        addCommentToList(commentText);
-                        comment.remove();
-                        return;
-                    }
-                }
+                let chanName = comment.children.comment.authorChannelName;
 
-                if (comment.children.comment.authorChannelName.match(/[1lI|]9금/)) {
+                if (chanName.replace(/[_-]/g, '').match(/[1lI|]9금/) && (chanName.match(/[_-]/g) || []).length >= 2) {
                     console.log("[FIST]: removed spam comment - " + commentText.textContent);
                     filteredComments += 1;
                     showFiltered.innerText = filteredComments + ' 💀';
                     addCommentToList(commentText);
                     comment.remove();
                     return;
-                    
-                    /* //good for eliminating spam but erase too much normal comments, which has multple lines.
-                    if (commentLine.textContent.split('\r\n')[1].trim() != '') {
-                        console.log("[FIST]: removed spam comment - " + commentText.textContent);
-                        filteredComments += 1;
-                        showFiltered.innerText = filteredComments + ' 💀';
-                        addCommentToList(commentText);
-                        comment.remove();
-                        return;
-                    }
-                    */
-                    sus = true;
+
                 }
 
             }
