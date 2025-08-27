@@ -1,0 +1,16 @@
+{
+  "name": "cgv-seat-analyzer",
+  "version": "1.0.0",
+  "description": "CGV movie seat activation/deactivation logic analyzer using Playwright",
+  "main": "cgv-seat-analyzer.js",
+  "scripts": {
+    "analyze": "node cgv-seat-analyzer.js",
+    "install-deps": "npm install playwright && npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "keywords": ["cgv", "seat", "analysis", "playwright", "automation"],
+  "author": "CGV Analyzer",
+  "license": "MIT"
+}
